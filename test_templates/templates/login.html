@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}IskNetWork Login{% endblock %} 
+{%block content %}
+<form action='../login' method='post'>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Username</label>
+    <input
+      type="username"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      name='username'
+    />
+    <div id="emailHelp" class="form-text">
+      We'll never share your email with anyone else.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input 
+    type="password" 
+    name='password'
+    class="form-control" 
+    id="exampleInputPassword1" />
+    <div id="passwordHelpBlock" class="form-text">
+        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+      </div>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+    <label class="form-check-label" for="exampleCheck1">Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+  <div class="form-text">
+        <a href="../signup" class='m-2'>
+            Do you want to Sign up?
+        </a>
+        <a href="../forgotten_password" class='m-2'>
+            Forgotten your password?
+        </a>
+    </div>
+</form>
+{% with messages = get_flashed_messages() %} {% if messages %} {% for msg in
+messages %}
+<p>{{msg}}</p>
+{% endfor %} {% endif %} {% endwith %} {{user}} 
+{% endblock %}

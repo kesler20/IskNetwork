@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block title %}Profile Page{% endblock %} {%block
+content %}
+
+<div class="card text-center">
+  <div class="card-header">Project 1</div>
+  <div class="card-body">
+    <h5 class="card-title">Steam Methane Reforming or Autothermal Reforming</h5>
+    <p class="card-text">
+      Exergetic optimisation and modelling of Steam Methane Reforming compared to Autothermal Reformer
+    </p>
+    <a href="#" class="btn btn-primary">Meet the team</a>
+  </div>
+  <img
+    src="{{ url_for('static', filename='img/Aspen-Plus.png') }}"
+    alt=""
+    srcset=""
+  />
+  <div class="card-footer text-muted">
+    <a
+      href="{{ url_for('static', filename='img/Aspen-Plus.png') }}"
+      download
+    >
+    <p>File 1</p>
+    </a>
+  </div>
+</div>
+
+{% with messages = get_flashed_messages() %} {% if messages %} {% for msg in
+messages %}
+<p>{{msg}}</p>
+{% endfor %} {% endif %} {% endwith %} {{user}} {% endblock %}

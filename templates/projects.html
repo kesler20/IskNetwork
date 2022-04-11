@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Profile Page{% endblock %} 
+{%block content %}
+<form action="../profile/projects" method="post">
+  <div class="mb-3">
+      <label for="formFile" class="form-label">Write project title</label>
+      <input 
+      type="text"
+      name='project title'
+      class="form-control"
+      id="exampleInputPassword1"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Upload all the files of your project</label>
+      <input class="form-control" name='description' type="file" id="formFile">
+    </div>  
+    <div class="mb-3">
+      <label for="formFileMultiple" class="form-label">Please upload a cover image of video for your project</label>
+      <input class="form-control" name='description_file' type="file" id="formFileMultiple" multiple>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Provide a description of the project</label>
+      <input
+      type="text"
+      name='project description'
+      class="form-control"
+      id="exampleInputPassword1" />
+    </div>
+    <button type="submit" class='btn btn-primary'>Create Project</button>
+</form>
+
+{% with messages = get_flashed_messages() %} {% if messages %} {% for msg in
+messages %}
+<p>{{msg}}</p>
+{% endfor %} {% endif %} {% endwith %} {{user}} 
+{% endblock %}

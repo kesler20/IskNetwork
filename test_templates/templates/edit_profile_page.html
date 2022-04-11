@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Profile Page{% endblock %} 
+{%block content %}
+<div class="mb-3">
+    <label for="formFile" class="form-label">Edit Profile Picture</label>
+    <input class="form-control" type="file" id="formFile">
+  </div>
+{% with messages = get_flashed_messages() %} {% if messages %} {% for msg in
+messages %}
+<p>{{msg}}</p>
+{% endfor %} {% endif %} {% endwith %} {{user}} 
+{% endblock %}
+
+
+
+
+  
